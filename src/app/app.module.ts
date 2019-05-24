@@ -1,5 +1,8 @@
+import { LoginPage } from './../pages/login/login';
+import { GridPage } from './../pages/grid/grid';
+import { Page1Page } from './../pages/page1/page1';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -10,7 +13,10 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    Page1Page,
+    GridPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +25,18 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    Page1Page,
+    GridPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+]
 })
 export class AppModule {}

@@ -1,9 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>page1</ion-title>
+    <ion-title style="text-align: center"><strong>{{pageTitle}}</strong></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
+        <ion-label>Sausage</ion-label>
+        <ion-toggle [(ngModel)]="sausage" color="warning" ></ion-toggle>
+      </ion-item>
+      <p>{{sausage}}</p>
+      <ion-button color="primary">Tertiary</ion-button>
 
+  <button ion-button color="danger" (click)="goToGrid()">Grid</button>
+  <ion-grid>
+  <ion-row>
+  <ion-col><ion-item><ion-input [(ngModel)]="myname" placeholder="Name" length="10"></ion-input></ion-item></ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+  <button ion-button color="dark" (click)="clickE()">Danger</button>
+</ion-col>
+</ion-row>
+</ion-grid>
 </ion-content>
+
