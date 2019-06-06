@@ -1,3 +1,6 @@
+import { AboutPage } from './../pages/about/about';
+import { HttpClient } from '@angular/common/http';
+import { NewsPage } from './../pages/news/news';
 import { LoginPage } from './../pages/login/login';
 import { GridPage } from './../pages/grid/grid';
 import { Page1Page } from './../pages/page1/page1';
@@ -6,9 +9,10 @@ import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { NewsProvider } from '../providers/news/news';
 
 @NgModule({
   declarations: [
@@ -16,10 +20,12 @@ import { HomePage } from '../pages/home/home';
     HomePage,
     Page1Page,
     GridPage,
-    LoginPage
+    LoginPage,
+    NewsPage,
+    AboutPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -28,12 +34,15 @@ import { HomePage } from '../pages/home/home';
     HomePage,
     Page1Page,
     GridPage,
-    LoginPage
+    LoginPage,
+    NewsPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NewsProvider
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

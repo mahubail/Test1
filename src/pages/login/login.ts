@@ -1,3 +1,4 @@
+import { Page1Page } from './../page1/page1';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -17,6 +18,7 @@ export class LoginPage {
 
   userName="";
   passWord="";
+  myLink = "https://cnn.com";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -37,8 +39,13 @@ export class LoginPage {
 
 if(this.userName=="admin" && this.passWord=="123456")
 
-this.navCtrl.push(HomePage);
+this.navCtrl.push(Page1Page);
 
+  }
+
+  onClick()
+  {
+    console.log("Take a photo");
   }
 
 }
